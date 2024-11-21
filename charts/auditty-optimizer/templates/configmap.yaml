@@ -1,0 +1,18 @@
+{{- if .Values.configMap.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: auditty-config
+  namespace: {{ .Values.namespace }}
+data:
+  config.yaml: |
+    ClusterName: {{ .Values.configMap.clusterName | default "name-of-your-cluster" }}
+    ExcludeNamespaces: |
+{{ toYaml .Values.configMap.excludeNamespaces | indent 6 }}
+    ExcludePods: |
+{{ toYaml .Values.configMap.excludePods | indent 6 }}
+    ExcludeLogs: |
+{{ toYaml .Values.configMap.excludeLogs | indent 6 }}
+    IncludeLogs: |
+{{ toYaml .Values.configMap.includeLogs | indent 6 }}
+{{- end }} 

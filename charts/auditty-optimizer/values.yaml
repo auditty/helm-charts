@@ -1,0 +1,37 @@
+# make sure to create the namespace 'auditty' or use `--namespace auditty --create-namespace` when installing the chart
+namespace: auditty
+
+resources:
+  requests:
+    memory: "256Mi"
+    cpu: "750m"
+  limits:
+    memory: "512Mi"
+    cpu: "900m"
+
+serviceAccount:
+  name: auditty-optimizer
+
+# The secret is mandatory and can be created by the helm chart if you set create to 'true'
+secret:
+  create: false
+  name: auditty-secret
+  licenseKey: ""
+  orgName: ""
+  orgUnit: ""
+  envName: ""
+
+# The configMap is mandatory and can be created by the helm chart if you set enabled to 'true'
+configMap:
+  enabled: false
+  clusterName: "name-of-your-cluster"
+  excludeNamespaces:
+    - "kube-system"
+  excludePods:
+    - "pod-prefix-to-exclude"
+  excludeLogs:
+    - "example-exclude-me-string"
+    - "DEBUG"
+  includeLogs:
+    - "example-include-me-string"
+    - "CRITICAL"
