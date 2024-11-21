@@ -15,7 +15,7 @@ spec:
       serviceAccountName: {{ .Values.serviceAccount.name }}
       containers:
       - name: auditty-optimizer
-        image: public.ecr.aws/o8y0g3i1/space/mizer:0.1.16
+        image: public.ecr.aws/o8y0g3i1/space/mizer:latest
         imagePullPolicy: Always
         securityContext:
           privileged: true
