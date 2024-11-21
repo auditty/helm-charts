@@ -1,5 +1,4 @@
-# make sure to create the namespace 'auditty' or use `--namespace auditty --create-namespace` when installing the chart
-namespace: auditty
+# Namespace 'auditty' should exist before installing the chart
 
 resources:
   requests:

@@ -42,7 +42,7 @@ jobs:
     - name: Update Helm Repo Index
       run: |
         mkdir -p ./charts
-        mv ./chart-packages/* ./charts/  # Move the packaged chart to the charts directory
+        mv ./chart-packages/* ./charts/ # Move the packaged chart to the charts directory
         helm repo index ./charts --url https://auditty.github.io/helm-charts
 
     # Step 6: Commit and Push Changes to gh-pages

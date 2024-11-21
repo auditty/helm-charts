@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: auditty-config
-  namespace: {{ .Values.namespace }}
+  namespace: auditty
 data:
   config.yaml: |
     ClusterName: {{ .Values.configMap.clusterName | default "name-of-your-cluster" }}
