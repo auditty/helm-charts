@@ -2,33 +2,43 @@ apiVersion: v1
 entries:
   auditty-optimizer:
   - apiVersion: v2
+    appVersion: 0.1.15
+    created: "2024-11-25T03:18:04.739027+02:00"
+    description: Auditty Optimizer installation for Kubernetes
+    digest: 7033b18ea25c8dd3931080d174e4de66276241cd1dddebe2abf39291982c51bf
+    name: auditty-optimizer
+    type: application
+    urls:
+    - https://auditty.github.io/helm-charts/auditty-optimizer-0.1.10.tgz
+    version: 0.1.10
+  - apiVersion: v2
     appVersion: 0.1.16
-    created: "2024-11-25T00:46:16.070385632Z"
+    created: "2024-11-25T03:18:04.740907+02:00"
     description: Auditty Optimizer installation for Kubernetes
     digest: fd80444dcf4edbc0e9ab54e53e70323987ffb72b93c217dd120b2f1ca4cc6cbb
     name: auditty-optimizer
     type: application
     urls:
-    - https://auditty.github.io/helm-charts/auditty-optimizer-0.1.9.tgz
+    - https://auditty.github.io/helm-charts/charts/auditty-optimizer-0.1.9.tgz
     version: 0.1.9
   - apiVersion: v2
     appVersion: 0.1.16
-    created: "2024-11-25T00:46:16.069983201Z"
+    created: "2024-11-25T03:18:04.740024+02:00"
     description: Auditty Optimizer installation for Kubernetes
     digest: 4158621cb05e4c53a822df1728fa915f52a16436dc20f5a7d14f44b4af6bc3f1
     name: auditty-optimizer
     type: application
     urls:
-    - https://auditty.github.io/helm-charts/auditty-optimizer-0.1.8.tgz
+    - https://auditty.github.io/helm-charts/charts/auditty-optimizer-0.1.8.tgz
     version: 0.1.8
   - apiVersion: v2
     appVersion: 0.1.15
-    created: "2024-11-25T00:46:16.069581191Z"
+    created: "2024-11-25T03:18:04.739755+02:00"
     description: Auditty Optimizer installation for Kubernetes
     digest: bb7732c3b51577dc98e0636952bb4403199bcd408035d26abef7244f92b39435
     name: auditty-optimizer
     type: application
     urls:
-    - https://auditty.github.io/helm-charts/auditty-optimizer-0.1.7.tgz
+    - https://auditty.github.io/helm-charts/charts/auditty-optimizer-0.1.7.tgz
     version: 0.1.7
-generated: "2024-11-25T00:46:16.068934735Z"
+generated: "2024-11-25T03:18:04.738645+02:00"
