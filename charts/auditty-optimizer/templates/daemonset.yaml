@@ -12,20 +12,20 @@ spec:
       labels:
         app: auditty-optimizer
     spec:
-      serviceAccountName: {{ .Values.serviceAccount.name }}
+      serviceAccountName: auditty-optimizer
       containers:
       - name: auditty-optimizer
-        image: public.ecr.aws/o8y0g3i1/space/mizer:0.1.16
+        image: public.ecr.aws/o8y0g3i1/space/mizer:0116
         imagePullPolicy: Always
         securityContext:
           privileged: true
         resources:
           requests:
-            memory: {{ .Values.resources.requests.memory }}
-            cpu: {{ .Values.resources.requests.cpu }}
+            memory: 256Mi
+            cpu: 250m
           limits:
-            memory: {{ .Values.resources.limits.memory }}
-            cpu: {{ .Values.resources.limits.cpu }}
+            memory: 512Mi
+            cpu: 500m
         ports:
         - containerPort: 2112
           name: metrics
@@ -33,23 +33,21 @@ spec:
         - name: AUDITTY_LICENSE_KEY
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.secret.name }}
+              name: auditty-secret
               key: auditty-license-key
         - name: ORG_NAME
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.secret.name }}
+              name: auditty-secret
               key: org-name
         - name: ORG_UNIT
           valueFrom:
-            secretKeyRef:
-              name: {{ .Values.secret.name }}
-              key: org-unit
+            fieldRef:
+              fieldPath: metadata.name
         - name: ENV_NAME
           valueFrom:
-            secretKeyRef:
-              name: {{ .Values.secret.name }}
-              key: env-name
+            fieldRef:
+              fieldPath: metadata.namespace
         volumeMounts:
         - name: var-log
           mountPath: /var/log
