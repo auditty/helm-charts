@@ -2,13 +2,73 @@ apiVersion: v1
 entries:
   auditty-optimizer:
   - apiVersion: v2
+    appVersion: 0.1.21
+    created: "2024-11-28T12:03:55.771108+02:00"
+    description: Auditty Optimizer installation for Kubernetes
+    digest: 1c4dc1440815e0416f2c80a5f3468eacc216a9bd39edf385f05b05a689a7bfde
+    name: auditty-optimizer
+    type: application
+    urls:
+    - https://helm.auditty.ai/auditty-optimizer-0.1.13.tgz
+    version: 0.1.13
+  - apiVersion: v2
     appVersion: 0.1.20
-    created: "2024-11-28T09:29:14.471567+02:00"
+    created: "2024-11-28T12:03:55.770863+02:00"
     description: Auditty Optimizer installation for Kubernetes
     digest: 1007eebfbba4b8bfba47150aa086269f5d9efcd94268c4e7f71f2412603355ab
     name: auditty-optimizer
     type: application
     urls:
-    - https://auditty.github.io/helm-charts/auditty-optimizer-0.1.12.tgz
+    - https://helm.auditty.ai/auditty-optimizer-0.1.12.tgz
     version: 0.1.12
-generated: "2024-11-28T09:29:14.469971+02:00"
+  - apiVersion: v2
+    appVersion: 0.1.20
+    created: "2024-11-28T12:03:55.772673+02:00"
+    description: Auditty Optimizer installation for Kubernetes
+    digest: 1007eebfbba4b8bfba47150aa086269f5d9efcd94268c4e7f71f2412603355ab
+    name: auditty-optimizer
+    type: application
+    urls:
+    - https://helm.auditty.ai/docs/auditty-optimizer-0.1.12.tgz
+    version: 0.1.12
+  - apiVersion: v2
+    appVersion: 0.1.17
+    created: "2024-11-28T12:03:55.771694+02:00"
+    description: Auditty Optimizer installation for Kubernetes
+    digest: f52b41671cf7707876f494e130de56f4991324aae7c26850509f254aa3847c64
+    name: auditty-optimizer
+    type: application
+    urls:
+    - https://helm.auditty.ai/charts/auditty-optimizer-0.1.11.tgz
+    version: 0.1.11
+  - apiVersion: v2
+    appVersion: 0.1.15
+    created: "2024-11-28T12:03:55.77145+02:00"
+    description: Auditty Optimizer installation for Kubernetes
+    digest: 006b2a7242d24fc86e27c14b2a1e69895f11f68756108b815808dd6a9ff4f952
+    name: auditty-optimizer
+    type: application
+    urls:
+    - https://helm.auditty.ai/charts/auditty-optimizer-0.1.10.tgz
+    version: 0.1.10
+  - apiVersion: v2
+    appVersion: 0.1.16
+    created: "2024-11-28T12:03:55.772357+02:00"
+    description: Auditty Optimizer installation for Kubernetes
+    digest: fd80444dcf4edbc0e9ab54e53e70323987ffb72b93c217dd120b2f1ca4cc6cbb
+    name: auditty-optimizer
+    type: application
+    urls:
+    - https://helm.auditty.ai/charts/auditty-optimizer-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
+    appVersion: 0.1.16
+    created: "2024-11-28T12:03:55.772122+02:00"
+    description: Auditty Optimizer installation for Kubernetes
+    digest: 4158621cb05e4c53a822df1728fa915f52a16436dc20f5a7d14f44b4af6bc3f1
+    name: auditty-optimizer
+    type: application
+    urls:
+    - https://helm.auditty.ai/charts/auditty-optimizer-0.1.8.tgz
+    version: 0.1.8
+generated: "2024-11-28T12:03:55.77049+02:00"
