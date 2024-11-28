@@ -9,6 +9,6 @@ entries:
     name: auditty-optimizer
     type: application
     urls:
-    - https://auditty/github.io/helm-charts/docs/auditty-optimizer-0.1.12.tgz
+    - https://auditty/github.io/helm-charts/auditty-optimizer-0.1.12.tgz
     version: 0.1.12
 generated: "2024-11-28T09:29:14.469971+02:00"
