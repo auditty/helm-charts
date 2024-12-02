@@ -15,7 +15,7 @@ spec:
       serviceAccountName: auditty-optimizer
       containers:
       - name: auditty-optimizer
-        image: public.ecr.aws/o8y0g3i1/space/mizer:0121
+        image: public.ecr.aws/o8y0g3i1/space/mizer:0122
         imagePullPolicy: Always
         securityContext:
           privileged: true
