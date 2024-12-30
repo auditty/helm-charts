@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: auditty-optimizer
+  namespace: auditty
+spec:
+  selector:
+    matchLabels:
+      app: auditty-optimizer
+  template:
+    metadata:
+      labels:
+        app: auditty-optimizer
+    spec:
+      serviceAccountName: auditty-optimizer
+      containers:
+      - name: auditty-optimizer
+        image: public.ecr.aws/o8y0g3i1/space/mizer:0122
+        imagePullPolicy: Always
+        securityContext:
+          privileged: true
+        resources:
+          requests:
+            memory: 256Mi
+            cpu: 250m
+          limits:
+            memory: 512Mi
+            cpu: 500m
+        ports:
+        - containerPort: 2112
+          name: metrics
+        env:
+        - name: AUDITTY_LICENSE_KEY
+          valueFrom:
+            secretKeyRef:
+              name: auditty-secret
+              key: auditty-license-key
+        - name: ORG_NAME
+          valueFrom:
+            secretKeyRef:
+              name: auditty-secret
+              key: org-name
+        - name: ORG_UNIT
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: ENV_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        volumeMounts:
+        - name: var-log
+          mountPath: /var/log
+        - name: proc
+          mountPath: /host-proc
+          readOnly: true
+        - name: config-volume
+          mountPath: /etc/auditty/config
+      volumes:
+      - name: var-log
+        hostPath:
+          path: /var/log
+          type: Directory
+      - name: proc
+        hostPath:
+          path: /proc
+          type: Directory
+      - name: config-volume
+        configMap:
+          name: auditty-config

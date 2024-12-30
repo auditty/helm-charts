@@ -1,0 +1,37 @@
+Thank you for installing Auditty.
+
+Some important notes about the prerequisites:
+
+1. If you choose to have Helm generate the secret for you, make sure to use the following flags when installing the Helm chart:
+    ```sh
+    --namespace auditty --create-namespace
+    ```
+
+2. The secret `{{ .Values.secret.name }}` must exist in the `auditty` namespace with the following data:
+    ```yaml
+    data:
+      auditty-license-key: <key>
+      org-name: <name>
+      org-unit: <name>
+      env-name: <name>
+    ```
+
+3. The ConfigMap needs to follow this structure:
+    ```yaml
+    data:
+      cluster-name: <anyNameYouWantToUse>
+      exclude-namespaces: |
+        - list-of-namespaces-to-always-ignore
+      exclude-pods: |
+        - pod-prefix-to-always-ignore
+      include-logs: |
+        - log-substring-to-always-pass-as-is
+      exclude-logs: |
+        - log-substring-to-always-drop (this takes precedence over 'include')
+    ```
+
+4. A healthy DaemonSet generally indicates that the setup is good to go.
+
+5. You can scrape port `2112` for `/metrics`.
+
+Let's go!
