@@ -3,34 +3,29 @@
 resources:
   requests:
     memory: "256Mi"
-    cpu: "750m"
+    cpu: "500m"
   limits:
     memory: "512Mi"
-    cpu: "900m"
+    cpu: "750m"
 
 serviceAccount:
   name: auditty-optimizer
 
 # The secret is mandatory and can be created by the helm chart if you set create to 'true'
 secret:
-  create: false
+  create: true
   name: auditty-secret
-  licenseKey: ""
-  orgName: ""
-  orgUnit: ""
-  envName: ""
+  licenseKey: "replace-this"
+  orgName: "replace-this"
+  orgUnit: "ou-name"
+  envName: "env-name"
 
 # The configMap is mandatory and can be created by the helm chart if you set enabled to 'true'
 configMap:
-  enabled: false
+  enabled: true
   clusterName: "name-of-your-cluster"
   excludeNamespaces:
     - "kube-system"
   excludePods:
-    - "pod-prefix-to-exclude"
   excludeLogs:
-    - "example-exclude-me-string"
-    - "DEBUG"
   includeLogs:
-    - "example-include-me-string"
-    - "CRITICAL"

@@ -1,4 +1,4 @@
-# Auditty//Helm Charts
+# Auditty Helm Charts 
 
 ## Usage
 
