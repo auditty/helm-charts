@@ -29,3 +29,7 @@ configMap:
   excludePods:
   excludeLogs:
   includeLogs:
+
+daemonset:
+  tolerations:
+    - operator: "Exists"

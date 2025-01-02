@@ -56,6 +56,10 @@ spec:
           readOnly: true
         - name: config-volume
           mountPath: /etc/auditty/config
+{{- if and .Values.daemonset .Values.daemonset.tolerations }}
+      tolerations:
+        {{- toYaml .Values.daemonset.tolerations | nindent 8 }}
+{{- end }}
       volumes:
       - name: var-log
         hostPath:
